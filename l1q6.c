@@ -1,0 +1,9 @@
+#include<unistd.h>
+#include<stdio.h>
+int main()
+{
+	char buff[20];
+	read(0,buff,10); //read 10 bytes from standard input
+	write(1,buff,10); //print 10 bytes from the buffer on the screen
+}
+

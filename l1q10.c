@@ -7,8 +7,9 @@
 #include<unistd.h>
 int main(){
 	int fd=open("t1",O_RDWR|O_CREAT,S_IRUSR|S_IWUSR);
-	if(fd== -1)
-		printf("open");
+	if(fd== -1){
+		printf("error");
+		exit(0);}
 	char content[10];
 	printf("enter the contents: ");
 	scanf(" %[^\n]",content);

@@ -1,3 +1,12 @@
+/*
+============================================================================
+Name : Question-13
+Author : Pratyasa Ray
+Description : Write a program to wait for a STDIN for 10 seconds using select. Write a proper print statement to
+verify whether the data is available within 10 seconds or not (check in $man 2 select).
+Date: 25th Aug, 2023.
+============================================================================
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
@@ -9,17 +18,15 @@ int main() {
     struct timeval tv;
     int retval;
 
-    // Watch STDIN (file descriptor 0) to see when it has input.
     FD_ZERO(&rfds);
     FD_SET(0, &rfds);
 
-    // Set the timeout to 10 seconds.
+ 
     tv.tv_sec = 10;
     tv.tv_usec = 0;
 
     printf("Waiting for input from STDIN for 10 seconds...\n");
 
-    // Wait for input or timeout using select.
     retval = select(1, &rfds, NULL, NULL, &tv);
 
     if (retval == -1) {

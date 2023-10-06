@@ -1,3 +1,13 @@
+/*
+============================================================================
+Name : Question-16
+Author : Pratyasa Ray
+Description : Write a program to perform mandatory locking.
+a. Implement write lock
+b. Implement read lock
+Date: 25th Aug, 2023.
+============================================================================
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -18,7 +28,7 @@ int main() {
     fl.l_type = F_WRLCK;
     fl.l_whence = SEEK_SET;
     fl.l_start = 0;
-    fl.l_len = 0;  // Lock the entire file
+    fl.l_len = 0;  // TILL THE END OF FILE
 
     if (fcntl(fd, F_SETLKW, &fl) == -1) {
         perror("Error setting write lock");
@@ -28,7 +38,6 @@ int main() {
     printf("Write lock acquired. Press Enter to release lock.\n");
     getchar();
 
-    // Release the lock
     fl.l_type = F_UNLCK;
     if (fcntl(fd, F_SETLKW, &fl) == -1) {
         perror("Error releasing lock");

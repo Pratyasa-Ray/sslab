@@ -1,3 +1,11 @@
+/*
+============================================================================
+Name : Question-12
+Author : Pratyasa Ray
+Description : Write a program to find out the opening mode of a file. Use fcntl.
+Date: 25th Aug, 2023.
+============================================================================
+*/
 #include<unistd.h>
 #include<errno.h>
 #include<stdlib.h>

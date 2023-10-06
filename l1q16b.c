@@ -1,3 +1,13 @@
+/*
+============================================================================
+Name : Question-16
+Author : Pratyasa Ray
+Description :Write a program to perform mandatory locking.
+a. Implement write lock
+b. Implement read lock
+Date: 25th Aug, 2023.
+============================================================================
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -13,12 +23,12 @@ int main() {
         return 1;
     }
 
-    // Set a read lock
+
     struct flock fl;
     fl.l_type = F_RDLCK;
     fl.l_whence = SEEK_SET;
     fl.l_start = 0;
-    fl.l_len = 0;  // Lock the entire file
+    fl.l_len = 0;  //TILL END OF THE FILE
 
     if (fcntl(fd, F_SETLKW, &fl) == -1) {
         perror("Error setting read lock");

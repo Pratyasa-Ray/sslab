@@ -1,0 +1,7 @@
+#ifndef ADMIN_CREDENTIALS
+#define ADMIN_CREDENTIALS
+
+#define ADMIN_LOGIN_ID "Pratyasa"
+#define ADMIN_PASSWORD "191200"
+
+#endif

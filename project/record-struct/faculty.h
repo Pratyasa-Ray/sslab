@@ -11,6 +11,7 @@ struct Faculty
     int phone[10];
     char dept[20];
     char course[20];
+    int courseid[10];
     char login[30]; // Format : name
     char password[30];
 };

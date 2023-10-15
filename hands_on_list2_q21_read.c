@@ -14,7 +14,7 @@
 #include <string.h>
 
 int main() {
-    const char *fifo_path = "fifoQ21";
+    const char *fifo_path = "fifoq21";
     int fd;
     char buffer[100];
 
